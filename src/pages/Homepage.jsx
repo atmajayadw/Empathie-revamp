@@ -4,7 +4,10 @@ function Home() {
   
     return (
       <>
-        <Hero_Section/>
+        {/* <Hero_Section/> */}
+        <div>
+            <h1>INI Homepage</h1>
+        </div>
       </>
     )
   }
