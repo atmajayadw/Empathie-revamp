@@ -7,12 +7,6 @@ const Navbar = () => {
       <section id="navbar">
         <div className="container">
           <div className="row navbar">
-            <div className="logo">
-                <Link to={"/"}>
-                  <img src={Logo} alt="logo"></img>
-                </Link>
-            </div>
-
             <div className="links">
               <ul>
                 <li>
@@ -32,6 +26,13 @@ const Navbar = () => {
                         {" "}
                         <span>Portfolio</span>
                   </NavLink>
+                </li>
+                <li>
+                  <div className="logo">
+                  <Link to={"/"}>
+                    <img src={Logo} alt="logo"></img>
+                  </Link>
+                  </div>
                 </li>
                 <li>
                   <NavLink

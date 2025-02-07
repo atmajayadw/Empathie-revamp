@@ -6,8 +6,44 @@ body {
   background-color: #171717;
 }
 
+#navbar {
+  margin-top: 20px;
+  height: 80px;
+  padding: 0;
+  z-index: 10;
+  position: relative;
+}
 #navbar .navbar {
-  background-color: red;
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+}
+#navbar .navbar .links {
+  width: 700px;
+  height: 80px;
+  border-radius: 5px;
+  background: rgba(171, 171, 171, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#navbar .navbar .links ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+#navbar .navbar .links ul li {
+  list-style-type: none;
+}
+#navbar .navbar .links ul li a {
+  text-decoration: none;
+  color: whitesmoke;
+  transition: 0.5s;
+}
+#navbar .navbar .links ul li a:hover {
+  color: #2f2f2f;
 }
 
 h1 {
