@@ -6,13 +6,14 @@ const Navbar = () => {
     <>
       <section id="navbar">
         <div className="container">
-          <div className="row navbar">
-            <div className="links">
+          <div className="row">
+            <div className="nav-desktop">
               <ul>
                 <li>
                   <NavLink
-                      className="link home" rel="noopenner noreferrer"
-                      to={{pathname: "/"}}
+                      className={({ isActive }) =>isActive ? "active" : ""}
+                      rel="noopenner noreferrer"
+                      to={{pathname: "/"}} 
                   >
                       {" "}
                       <span>Home</span>
@@ -20,7 +21,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <NavLink
-                        className="link portfolio" rel="noopenner noreferrer"
+                        rel="noopenner noreferrer"
                         to={{pathname: "/portfolio"}}
                     >
                         {" "}
@@ -36,7 +37,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <NavLink
-                        className="link about" rel="noopenner noreferrer"
+                        rel="noopenner noreferrer"
                         to={{pathname: "/about-us"}}
                     >
                         {" "}
@@ -45,7 +46,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <NavLink
-                        className="link contact" rel="noopenner noreferrer"
+                        rel="noopenner noreferrer"
                         to={{pathname: "/contact"}}
                     >
                         {" "}
@@ -53,6 +54,10 @@ const Navbar = () => {
                   </NavLink>
                 </li>
               </ul>
+            </div>
+            
+            <div className="nav-mobile">
+              <h1>Ini Sidebar</h1>
             </div>
           </div>
         </div>
