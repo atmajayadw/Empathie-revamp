@@ -4,9 +4,8 @@ function Home() {
   
     return (
       <>
-        {/* <Hero_Section/> */}
         <div>
-            <h1>INI Homepage</h1>
+          <Hero_Section/>
         </div>
       </>
     )
