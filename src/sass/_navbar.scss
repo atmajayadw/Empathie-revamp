@@ -26,9 +26,6 @@
 
                 li{
                      list-style-type: none;
-
-                    
-
                     a{
                         text-decoration: none;
                         color: whitesmoke;
@@ -45,6 +42,110 @@
                     }
                 }
             }
+        }
+
+        .nav-mobile{
+            width: 100vw;
+            // position: relative;
+
+            .sidebar{
+                position: fixed;
+                right: 0;
+                top: 0;
+                width: 0%;
+                opacity: 0;
+                visibility: hidden;
+                transition: 0.5s;
+                transform: translate(0, 30);
+                
+                &.active {
+                    width: 50%;
+                    visibility: visible;
+                    transform: translate(0, 0);
+                    opacity: 1;
+                }
+
+                ul{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                    padding: 40px 0;
+                    background: rgba(#ababab, 1);
+                    height: 100vh;
+                    margin: 0;
+                    list-style: none;
+                    li{
+                        a{
+                            text-decoration: none;
+                            color: whitesmoke;
+                        }
+    
+                        .link.active {
+                            color: rgba(0, 0, 0, 0.5);
+                          }
+                    }
+                }
+            }
+
+            .hamburger{
+                cursor: pointer;
+                height: 25px;
+                width: 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                position: absolute;
+                right: 2%;
+                z-index: 3;
+
+                span{
+                    display: block;
+                    width: 30px;
+                    height: 4px;
+                    background-color: whitesmoke;
+                    border-radius: 36px;
+                    transition: 0.7s;
+
+                    &.line1 {
+                        -webkit-transform-origin: 0 0;
+                        transform-origin: 0 0;
+                    }
+    
+                    &.line3 {
+                        -webkit-transform-origin: 0 100%;
+                        transform-origin: 0 100%;
+                    }
+
+                    &.show1 {
+                        -webkit-transition: all 0.7s;
+                        transition: all 0.7s;
+                        -webkit-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                        background-color: white;
+                    }
+
+                    &.show3 {
+                        -webkit-transition: all 0.7s;
+                        transition: all 0.7s;
+                        -webkit-transform: rotate(-45deg) translate(0, 0);
+                        transform: rotate(-45deg) translate(0, 0);
+                        background-color: white;
+                    }
+
+                    &.show2 {
+                        opacity: 0;
+                        transition: all 0.7s;
+                    }
+
+                }
+
+
+
+            }
+
+
+
         }
 
     }
