@@ -1,3 +1,107 @@
-h1{
-    color: blueviolet;
+@use "../setup";
+
+#slideshow {
+    #carousel{
+        z-index: 1;
+        .carousel-indicators button{
+            display: block;
+            width: 30px;
+            height: 4px;
+            border: 1px;
+            border-radius: 25px;
+            background-color: whitesmoke;
+            cursor: pointer;
+        }
+
+        .carousel-inner{
+            .carousel-img{
+                width: 100vw;
+                height: 100vh;
+                object-fit: cover;
+                object-position: center;
+                display: block;
+            }
+        }
+    }
+
+    .mobile-banner{
+        display: none;
+        background-image: url("../assets/img/BG1.jpg");
+        background-size: cover;
+        height: 100vh;
+        background-position-x: 82%;
+    }
+
+    .container-buttons{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        .buttons{
+            display: flex;
+            justify-content: space-around;
+            width: 360px;
+            z-index: 2;
+            position: absolute;
+            bottom: 40px;
+            .btn-explore {
+                width: 160px;
+                border: 1px solid white;
+                background-color: #2f2f2f;
+                cursor: pointer;
+                transition: 0.3s;
+                span {
+                  color: white;
+                }
+    
+                &:hover {
+                    background-color: whitesmoke;
+                    span {
+                      color: #2f2f2f;
+                    }
+                }
+            }
+    
+            .btn-contact{
+                width: 160px;
+                border: 1px solid white;
+                background-color: #2f2f2f;
+                cursor: pointer;
+                transition: 0.3s;
+                span {
+                  color: white;
+                }
+          
+                &:hover {
+                  background-color: whitesmoke;
+                  span {
+                    color: #2f2f2f;
+                  }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 992px) {
+        .mobile-banner{
+            display: block;
+        }
+
+        #carousel{
+            display: none;
+        }
+
+        .buttons{
+            .btn-contact {
+                margin-left: 10px;
+                width: 140px;
+              }
+              .btn-explore {
+                width: 140px;
+                margin-right: 10px;
+              }
+        }
+    }
+
 }

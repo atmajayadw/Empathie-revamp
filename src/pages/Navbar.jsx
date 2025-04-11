@@ -42,12 +42,7 @@ const Navbar = () => {
             <div className="nav-desktop">
               <ul>
                 <li>
-                  <NavLink
-                      className={({ isActive }) =>isActive ? "active" : ""}
-                      rel="noopenner noreferrer"
-                      to={{pathname: "/"}} 
-                  >
-                      {" "}
+                  <NavLink className={({ isActive }) =>isActive ? "active" : ""} rel="noopenner noreferrer" to={{pathname: "/"}}>
                       <span>Home</span>
                   </NavLink>
                 </li>
@@ -93,7 +88,12 @@ const Navbar = () => {
             {/* Sidebar Mobile */}
             <div className="nav-mobile">
 
-
+            <div className="logo">
+              <Link to={"/"}>
+                <img src={Logo} alt=""></img>
+              </Link>
+            </div>
+            
               {/* Burger Menu */}
               <div className="hamburger" onClick={hamburger}>
                   <span className="line1"></span>
