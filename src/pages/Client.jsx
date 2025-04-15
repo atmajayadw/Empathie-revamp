@@ -1,4 +1,5 @@
 import Navbar from '../pages/Navbar.jsx'
+import Client_list from '../component/Client/Client_list.jsx'
 
 function Client() {
   
@@ -7,7 +8,7 @@ function Client() {
 
         <div>
             <Navbar/>
-            <h1>Ini Client</h1>
+            <Client_list/>
         </div>
       </>
     )
