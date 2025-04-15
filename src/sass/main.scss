@@ -1,2 +1,6 @@
+@use 'setup';
 @use 'navbar';
-@use 'Homepage/mainbanner';
+@use 'Homepage/home_hero';
+@use 'Portfolio/portfolio_hero';
+@use 'Portfolio/portfolio_category';
+

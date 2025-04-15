@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap");
 body {
   font-family: "Noto Sans", sans-serif;
-  background-color: #171717;
+  background-color: #171717 !important;
 }
 
 #navbar {
@@ -42,6 +42,7 @@ body {
   text-decoration: none;
   color: whitesmoke;
   transition: 0.5s;
+  font-size: 16px;
 }
 #navbar .row .nav-desktop ul li a:hover {
   color: #2f2f2f;
@@ -146,10 +147,10 @@ body {
   }
 }
 
-#slideshow #carousel {
+#hero-home #carousel {
   z-index: 1;
 }
-#slideshow #carousel .carousel-indicators button {
+#hero-home #carousel .carousel-indicators button {
   display: block;
   width: 30px;
   height: 4px;
@@ -158,7 +159,7 @@ body {
   background-color: whitesmoke;
   cursor: pointer;
 }
-#slideshow #carousel .carousel-inner .carousel-img {
+#hero-home #carousel .carousel-inner .carousel-img {
   width: 100vw;
   height: 100vh;
   -o-object-fit: cover;
@@ -167,21 +168,21 @@ body {
      object-position: center;
   display: block;
 }
-#slideshow .mobile-banner {
+#hero-home .mobile-banner {
   display: none;
   background-image: url("../assets/img/BG1.jpg");
   background-size: cover;
   height: 100vh;
   background-position-x: 82%;
 }
-#slideshow .container-buttons {
+#hero-home .container-buttons {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
 }
-#slideshow .container-buttons .buttons {
+#hero-home .container-buttons .buttons {
   display: flex;
   justify-content: space-around;
   width: 360px;
@@ -189,51 +190,117 @@ body {
   position: absolute;
   bottom: 40px;
 }
-#slideshow .container-buttons .buttons .btn-explore {
+#hero-home .container-buttons .buttons .btn-explore {
   width: 160px;
   border: 1px solid white;
   background-color: #2f2f2f;
   cursor: pointer;
   transition: 0.3s;
 }
-#slideshow .container-buttons .buttons .btn-explore span {
+#hero-home .container-buttons .buttons .btn-explore span {
   color: white;
 }
-#slideshow .container-buttons .buttons .btn-explore:hover {
+#hero-home .container-buttons .buttons .btn-explore:hover {
   background-color: whitesmoke;
 }
-#slideshow .container-buttons .buttons .btn-explore:hover span {
+#hero-home .container-buttons .buttons .btn-explore:hover span {
   color: #2f2f2f;
 }
-#slideshow .container-buttons .buttons .btn-contact {
+#hero-home .container-buttons .buttons .btn-contact {
   width: 160px;
   border: 1px solid white;
   background-color: #2f2f2f;
   cursor: pointer;
   transition: 0.3s;
 }
-#slideshow .container-buttons .buttons .btn-contact span {
+#hero-home .container-buttons .buttons .btn-contact span {
   color: white;
 }
-#slideshow .container-buttons .buttons .btn-contact:hover {
+#hero-home .container-buttons .buttons .btn-contact:hover {
   background-color: whitesmoke;
 }
-#slideshow .container-buttons .buttons .btn-contact:hover span {
+#hero-home .container-buttons .buttons .btn-contact:hover span {
   color: #2f2f2f;
 }
 @media (max-width: 992px) {
-  #slideshow .mobile-banner {
+  #hero-home .mobile-banner {
     display: block;
   }
-  #slideshow #carousel {
+  #hero-home #carousel {
     display: none;
   }
-  #slideshow .buttons .btn-contact {
+  #hero-home .buttons .btn-contact {
     margin-left: 10px;
     width: 140px;
   }
-  #slideshow .buttons .btn-explore {
+  #hero-home .buttons .btn-explore {
     width: 140px;
     margin-right: 10px;
   }
+}
+
+#hero-portfolio .hero .row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#hero-portfolio .hero .row img {
+  margin-top: 150px;
+  height: 68vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 0;
+}
+
+#category-portfolio .row h1 {
+  font-family: "Noto Sans JP", sans-serif;
+  color: whitesmoke;
+  font-weight: 100;
+  font-size: 36px;
+  letter-spacing: 20px;
+  margin-top: 60px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+#category-portfolio .row .categories {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+#category-portfolio .row .categories .category {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 430px;
+}
+#category-portfolio .row .categories .category img {
+  width: 340px;
+  height: 340px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#category-portfolio .row .categories .category .btn-category {
+  background-color: #2f2f2f;
+  color: white;
+  width: 270px;
+  height: 52px;
+  border: 1px solid white;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 20px;
+  font-weight: 100;
+  letter-spacing: 5px;
+  transition: 0.5s;
+}
+#category-portfolio .row .categories .category .btn-category:hover {
+  background-color: white;
+  color: #2f2f2f;
+  border: 1px solid black;
+}
+#category-portfolio .row hr {
+  margin-top: 60px;
+  margin-bottom: 30px;
+  height: 1px;
+  background-color: #454545;
+  opacity: 1;
 }/*# sourceMappingURL=main.css.map */

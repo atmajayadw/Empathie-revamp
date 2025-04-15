@@ -3,11 +3,11 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import { BG1, BG2, BG3, BG4, BG5 } from "../../assets/img/img.js";
 import {NavLink } from "react-router-dom";
 
-function Hero_Section() {
+function Hero_Home() {
     
     return (
       <>
-        <section id="slideshow">
+        <section id="hero-home">
           <div id="carousel" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-indicators">
               <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -18,19 +18,19 @@ function Hero_Section() {
             </div>
 
             <div className="carousel-inner">
-              <div className="carousel-item active">
+              <div className="carousel-item active" data-bs-interval="2500">
                 <img src={BG1} className="carousel-img" alt="..."/>
               </div>
-              <div className="carousel-item">
+              <div className="carousel-item" data-bs-interval="2500">
                 <img src={BG2} className="carousel-img" alt="..."/>
               </div>
-              <div className="carousel-item">
+              <div className="carousel-item" data-bs-interval="2500">
               <img src={BG3} className="carousel-img" alt="..."/>
               </div>
-              <div className="carousel-item">
+              <div className="carousel-item" data-bs-interval="2500">
               <img src={BG4} className="carousel-img" alt="..."/>
               </div>
-              <div className="carousel-item">
+              <div className="carousel-item" data-bs-interval="2500">
               <img src={BG5} className="carousel-img" alt="..."/>
               </div>
             </div>
@@ -57,5 +57,5 @@ function Hero_Section() {
     )
   }
   
-  export default Hero_Section
+  export default Hero_Home
   

@@ -1,0 +1,18 @@
+@use "../setup";
+
+#hero-portfolio {
+    .hero{
+        .row{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            img{
+                margin-top: 150px;
+                height: 68vh;
+                // width: 90%;
+                object-fit: cover;
+                padding: 0;
+            }
+        }
+    }
+}

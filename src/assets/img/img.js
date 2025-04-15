@@ -3,7 +3,7 @@ import BG2 from "./BG2.jpg";
 import BG3 from "./BG3.jpg";
 import BG4 from "./BG4.jpg";
 import BG5 from "./BG5.jpg";
-import Jumbo_portfolio from "./Jumbo_portfolio.jpg";
+import Img_Hero_Portfolio from "./Img_Hero_Portfolio.jpg";
 import Jumbo_contact from "./Jumbo_contact.jpg";
 import Jumbo_about from "./Jumbo_about.jpg";
 import Thumbail1 from "./thumbnail1.jpg";
@@ -17,7 +17,7 @@ export {
   BG4,
   BG5,
   Jumbo_about,
-  Jumbo_portfolio,
+  Img_Hero_Portfolio,
   Jumbo_contact,
   Thumbail1,
   Thumbail2,
