@@ -14,21 +14,21 @@ function Category_Portfolio() {
                         <div className="categories">
                             <div className="category">
                                 <img src={Thumbail1} alt="engagement"/>
-                                <button className="btn btn-category" rel="noopenner noreferrer" to={{pathname: "/portfolio",}}>
+                                <NavLink className="btn btn-category" rel="noopenner noreferrer" to={{pathname: "/portfolio/client",}}>
                                     <span>Engagement</span>
-                                </button>
+                                </NavLink>
                             </div>
 
                             <div className="category">
                                 <img src={Thumbail2} alt="pre-wedding"/>
-                                <button className="btn btn-category" rel="noopenner noreferrer" to={{pathname: "/portfolio",}}>
+                                <button className="btn btn-category" rel="noopenner noreferrer" to={{pathname: "/portfolio/client",}}>
                                     <span>PreWedding</span>
                                 </button>
                             </div>
 
                             <div className="category">
                                 <img src={Thumbail3} alt="wedding"/>
-                                <button className="btn btn-category" rel="noopenner noreferrer" to={{pathname: "/portfolio",}}>
+                                <button className="btn btn-category" rel="noopenner noreferrer" to={{pathname: "/portfolio/client",}}>
                                     <span>Wedding</span>
                                 </button>
                             </div>

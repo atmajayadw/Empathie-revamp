@@ -1,16 +1,16 @@
 import Navbar from '../pages/Navbar.jsx'
 
-
-function About() {
+function Client() {
   
     return (
       <>
+
         <div>
-          <Navbar/>
-            <h1>INI About</h1>
+            <Navbar/>
+            <h1>Ini Client</h1>
         </div>
       </>
     )
   }
   
-  export default About
+  export default Client
