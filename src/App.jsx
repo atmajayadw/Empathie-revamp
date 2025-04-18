@@ -4,6 +4,7 @@ import Navbar from "./pages/Navbar";
 import Home from './pages/Homepage'
 import Portfolio from './pages/Portfolio'
 import Client from './pages/Client'
+import Detail from './pages/Detail'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import NoPage from "./pages/NoPage";
@@ -18,6 +19,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="portfolio/client" element={<Client />} />
+            <Route path="portfolio/client/detail" element={<Detail />} />
             <Route path="about-us" element={<About />} />
             <Route path="contact" element={<Contact />} />
             <Route path="*" element={<NoPage />} />
