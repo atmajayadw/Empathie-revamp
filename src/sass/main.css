@@ -484,4 +484,54 @@ body {
 }
 #client-detail .container .client-photos .photo h3:hover {
   color: #ababab;
+}
+
+#hero-about .hero .row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#hero-about .hero .row img {
+  margin-top: 150px;
+  height: 68vh;
+  -o-object-position: 100% 70%;
+     object-position: 100% 70%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 0;
+}
+
+#content-about {
+  padding: 20px;
+}
+#content-about .container {
+  margin-top: 40px;
+  background-color: #2f2f2f;
+  border-radius: 10px;
+  padding: 30px;
+}
+#content-about .container h1 {
+  font-family: "Noto Sans JP", sans-serif;
+  color: whitesmoke;
+  font-weight: 100;
+  font-size: 36px;
+  letter-spacing: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin-top: -6px;
+}
+#content-about .container .row {
+  margin-top: 30px;
+}
+#content-about .container .row .content.desc {
+  border-radius: 10px;
+  padding: 40px;
+}
+#content-about .container .row .content.desc p {
+  margin: auto;
+  font-family: "Rokkitt", serif;
+  color: white;
+}
+#content-about .container .row .content.image {
+  width: 400px;
 }/*# sourceMappingURL=main.css.map */

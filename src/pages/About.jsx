@@ -1,4 +1,6 @@
 import Navbar from '../pages/Navbar.jsx'
+import Hero_About from '../component/About/Hero_About.jsx'
+import Content_About from '../component/About/Content_About.jsx'
 
 
 function About() {
@@ -7,7 +9,8 @@ function About() {
       <>
         <div>
           <Navbar/>
-            <h1>INI About</h1>
+          <Hero_About/>  
+          <Content_About/>         
         </div>
       </>
     )
