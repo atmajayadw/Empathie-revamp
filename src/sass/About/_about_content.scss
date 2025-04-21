@@ -1,7 +1,7 @@
 @use "../setup";
 
 #content-about{
-    padding: 20px;
+    margin: 40px;
 
     .container{
         margin-top: 40px;
@@ -14,8 +14,7 @@
             color: whitesmoke;
             font-weight: 100;
             font-size: 36px;
-            letter-spacing: 20px;
-            // margin-top: 40px;
+            letter-spacing: 10px;
             text-shadow: 2px 2px 8px rgba($color: #000000, $alpha: 0.3);
             text-align: center;
             margin-top: -6px;

@@ -1,0 +1,18 @@
+@use "../setup";
+
+#hero-contact {
+    .hero{
+        .row{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            img{
+                margin-top: 150px;
+                height: 68vh;
+                object-position: 100% 70%;
+                object-fit: cover;
+                padding: 0;
+            }
+        }
+    }
+}

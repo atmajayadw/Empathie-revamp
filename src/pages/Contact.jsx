@@ -1,4 +1,6 @@
 import Navbar from '../pages/Navbar.jsx'
+import Hero_Contact from '../component/Contact/Hero_Contact.jsx'
+import Content_Contact from '../component/Contact/Content_Contact.jsx'
 
 function Contact() {
   
@@ -6,7 +8,8 @@ function Contact() {
       <>
         <div>
             <Navbar/>
-            <h1>INI Contact</h1>
+            <Hero_Contact/>
+            <Content_Contact/>
         </div>
       </>
     )
