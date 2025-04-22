@@ -12,6 +12,10 @@
                 // width: 90%;
                 object-fit: cover;
                 padding: 0;
+                
+                @media (max-width: 576px) {
+                    object-position: 40% 100%;
+                }
             }
         }
     }

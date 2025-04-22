@@ -53,4 +53,21 @@
             }
         }
     }
+
+    @media (max-width: 992px) {
+      .container{
+          h1{
+              letter-spacing: 10px;
+              text-align: center;
+              font-size: 28px;
+          }
+          .categories{
+              flex-wrap: wrap;
+              justify-content: center;
+              .category{
+                  margin-bottom: 40px;
+              }
+          }
+      }
+  }
 }
