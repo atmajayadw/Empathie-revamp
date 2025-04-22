@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import { Thumbail1, Thumbail2, Thumbail3 } from "../../assets/img/img";
-import {NavLink } from "react-router-dom";
+import {Link, NavLink } from "react-router-dom";
 
 function Category_Portfolio() {
     return (
@@ -14,23 +14,23 @@ function Category_Portfolio() {
                         <div className="categories">
                             <div className="category">
                                 <img src={Thumbail1} alt="engagement"/>
-                                <NavLink className="btn btn-category" rel="noopenner noreferrer" to={{pathname: "/portfolio/client",}}>
+                                <NavLink className="btn btn-category" rel="noopenner noreferrer" to={{pathname: "/portfolio/client"}} state={{ category: 'Engagement' }} >
                                     <span>Engagement</span>
                                 </NavLink>
                             </div>
 
                             <div className="category">
                                 <img src={Thumbail2} alt="pre-wedding"/>
-                                <button className="btn btn-category" rel="noopenner noreferrer" to={{pathname: "/portfolio/client",}}>
+                                <NavLink className="btn btn-category" rel="noopenner noreferrer" to={{pathname: "/portfolio/client"}} state={{ category: 'PreWedding' }} >
                                     <span>PreWedding</span>
-                                </button>
+                                </NavLink>
                             </div>
 
                             <div className="category">
                                 <img src={Thumbail3} alt="wedding"/>
-                                <button className="btn btn-category" rel="noopenner noreferrer" to={{pathname: "/portfolio/client",}}>
+                                <NavLink className="btn btn-category" rel="noopenner noreferrer" to={{pathname: "/portfolio/client"}} state={{ category: 'Wedding' }} >
                                     <span>Wedding</span>
-                                </button>
+                                </NavLink>
                             </div>
                         </div>
 

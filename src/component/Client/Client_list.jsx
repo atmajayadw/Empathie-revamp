@@ -2,8 +2,30 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import {Img_Hero_Portfolio} from "../../assets/img/img.js";
 import {NavLink } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
+import { useRef, useEffect } from "react";
 
 function Client_list() {
+
+    // const location = useLocation();
+  
+    // const getCategory = () => {
+    //   const engagement = location.state?.engagement; // Akses state yang dikirim
+    //   console.log(engagement);  // Akan mencetak 'Engagement'
+    // };
+
+
+
+    //   // PENGGANTI COMPONENTDIDMOUNT!!!
+    // const effectRun = useRef(false); // Ref untuk melacak apakah efek sudah berjalan
+    // useEffect(() => {
+    //     if (!effectRun.current) {
+    //     getCategory();
+    //     console.log(location.state);
+    //     effectRun.current = true; 
+    //     }
+    // }, []); 
+
     return (
         <>
             <section id="client-list">
