@@ -21,7 +21,7 @@ function Category_Portfolio() {
 
                             <div className="category">
                                 <img src={Thumbail2} alt="pre-wedding"/>
-                                <NavLink className="btn btn-category" rel="noopenner noreferrer" to={{pathname: "/portfolio/client"}} state={{ category: 'PreWedding' }} >
+                                <NavLink className="btn btn-category" rel="noopenner noreferrer" to={{pathname: "/portfolio/client"}} state={{ category: 'Pre-Wedding' }} >
                                     <span>PreWedding</span>
                                 </NavLink>
                             </div>

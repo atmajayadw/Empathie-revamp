@@ -4,13 +4,14 @@ import { useLocation } from 'react-router-dom';
 import { useRef, useEffect, useState } from "react";
 
 function Client() {
-      const location = useLocation(); // 1. Run ini pertama kali untuk akses location / State
+      const location = useLocation(); // 1.Mengambil informasi tentang URL saat ini (termasuk state) dari react-router-dom
 
-      //2-A. Buat fungsi untuk ambil State 
+      const [selectedCategory, setCategory] = useState(null); //2. Membuat state lokal untuk menyimpan kategori yang dipilih. Awalnya diset null. selectedCategory = nilai sekarang, setCategory = function untuk mengubah nilainya
+
+
+      //3. Function untuk mengambil kategori dari location.state 
       const getCategory = () => {
         const selectedCategory = location.state?.category; 
-
-        //3. Kembalikan nilai state
         return selectedCategory;
       };
   
@@ -18,22 +19,18 @@ function Client() {
       const effectRun = useRef(false); 
       useEffect(() => {
           if (!effectRun.current) {
-            const category = getCategory();  // 2-B Jalankan fungsinya
-            setCategory(category);  // 4. Menyimpan nilai selectedCategory ke dalam state
+            const category = getCategory();  // 4. Panggil fungsi getCategory() untuk ambil nilai dari location
+            setCategory(category);  // 5. Ubah state selectedCategory menjadi nilai category yang tadi diambil dari location
           effectRun.current = true; 
           }
       }, []); 
-
-      // 5. Tersimpan kedalam state selectedCategory
-      const [selectedCategory, setCategory] = useState(null);
 
     return (
       <>
 
         <div>
             <Navbar/>
-            <Client_list/>
-            <h1>{selectedCategory}</h1>
+            <Client_list category={selectedCategory}/>
         </div>
       </>
     )
