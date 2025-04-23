@@ -55,9 +55,11 @@ function Client_detail(props) {
         document.body.style.overflow = "hidden";
         modal.style.display = "block";
         modal_img.src ="https://empathie-rest-server.empathiephoto.site/uploads/" + e.target.alt;
-        if (e.target.naturalHeight > 1500) {
-            modal_img.style.maxWidth = "400px";
-        } else if (window.innerWidth < 992){
+        if (e.target.naturalHeight > e.target.naturalWidth && window.innerWidth > 992) {
+            modal_img.style.maxWidth = "500px";
+        } else if(e.target.naturalHeight > e.target.naturalWidth ) {
+            modal_img.style.maxWidth = "80%";
+        }else if (window.innerWidth < 992){
             modal_img.style.maxWidth = "90%";
         } else {
             modal_img.style.maxWidth = "60%";
@@ -79,7 +81,9 @@ function Client_detail(props) {
 
                 <div id="modal" className="modal">
                     <span id="close-modal" onClick={closeModal}>x</span>
-                    <img className="modal-content" id="modal-img" alt="" />
+                    <div className="modal-content">
+                        <img id="modal-img" alt="" />
+                    </div>
                     <div id="modal-caption"></div>
                 </div>
 
