@@ -29,11 +29,12 @@ function Client_list(props) {
           }
     }, [props.category]);    
 
-    useEffect(() => {
-        if (result) {
-          console.log("✅ result telah diperbarui:", result);
-        }
-    }, [result]);
+    // Cek apakah result sudah siap dipakai mapping
+    // useEffect(() => {
+    //     if (result) {
+    //       console.log("✅ result telah diperbarui:", result);
+    //     }
+    // }, [result]);
 
     return (
         <>
@@ -51,7 +52,7 @@ function Client_list(props) {
                     <h1 className="client-type">{props.category}</h1>
                     <div className="clients">
                         {result?.data?.map((item) => (
-                            <NavLink key={item.id} className="client" rel="noopenner noreferrer" to={{pathname: "/portfolio/client/detail",}}>
+                            <NavLink key={item.id} className="client" rel="noopenner noreferrer" to={{pathname: "/portfolio/client/detail"}} state={{ client_id: item.client_id, client_name: item.client, category: props.category }}>
                             <img src={"https://empathie-rest-server.empathiephoto.site/uploads/thumbnail/"+ item.thumbnail} alt="" />
                             <h3>{item.client}</h3>
                             </NavLink>

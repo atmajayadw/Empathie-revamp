@@ -434,7 +434,6 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.9);
   /* Modal Content (image) */
@@ -452,8 +451,9 @@ body {
 #client-detail #modal .modal-content {
   margin: auto;
   display: block;
-  width: 90%;
-  max-width: 1400px;
+  width: 60%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #client-detail .container a {
   text-decoration: none;

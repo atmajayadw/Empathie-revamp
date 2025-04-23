@@ -15,7 +15,7 @@ function Client() {
         return selectedCategory;
       };
   
-      // Pengganti ComponentDidMount () agar fungsi dijalankan 1x saja
+      // useRef jadi pengganti ComponentDidMount () dipakai sebagai "penanda" (flag) agar useEffect tidak dijalankan lebih dari satu kali, meskipun komponen re-render.
       const effectRun = useRef(false); 
       useEffect(() => {
           if (!effectRun.current) {
