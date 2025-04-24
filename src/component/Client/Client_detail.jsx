@@ -1,11 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
-import {NavLink } from "react-router-dom";
+import {NavLink, useNavigate } from "react-router-dom";
 import { useRef, useEffect, useState } from "react";
 import { useLocation } from 'react-router-dom';
 import axios from "axios";
 
 function Client_detail(props) {
+    const navigate = useNavigate();
 
     const setLoaderOn = () => {
         const content = document.querySelector(".client-photos");
@@ -27,6 +28,16 @@ function Client_detail(props) {
               loaderEffect .current = true; 
             }
         }, []);      
+
+    const checkPage = () => {
+        const h1 = document.querySelector("h1");
+        setTimeout(() => {
+            if (h1.textContent.includes("undefined")) {
+                console.log("H1 kosong");
+                navigate("/portfolio")
+              }
+          }, 1000);
+        }        
 
     const location = useLocation();
     const [selectedClient, setCategory] = useState(null);
@@ -67,7 +78,9 @@ function Client_detail(props) {
             getDetail();
             console.log(selectedClient);
           detailLoaded.current = true; 
-          }
+          } else {
+            checkPage();
+          } 
     }, [selectedClient]);    
 
     const showModal = (e) => {

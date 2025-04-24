@@ -1,10 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import { useRef, useEffect, useState } from "react";
-import {NavLink } from "react-router-dom";
+import {NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Client_list(props) {
+    const navigate = useNavigate();
 
     const setLoaderOn = () => {
         const content = document.querySelector(".clients");
@@ -25,8 +26,18 @@ function Client_list(props) {
               setLoaderOn();
               loaderEffect .current = true; 
             }
-        }, []);      
+        }, []);     
 
+    const checkPage = () => {
+            const h1 = document.querySelector("h1");
+        setTimeout(() => {
+            if (h1 && h1.textContent.trim() === "") {
+                console.log("H1 kosong");
+                navigate("/portfolio")
+              }
+          }, 3000);
+        }
+        
     const [result, setData] = useState(null);
     
     const getData  = () => {
@@ -48,6 +59,8 @@ function Client_list(props) {
           if (!effectRun.current && props.category) {
             getData();
           effectRun.current = true; 
+          } else {
+            checkPage();
           }
     }, [props.category]);    
 
