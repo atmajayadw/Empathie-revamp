@@ -412,7 +412,7 @@ body {
 #client-list .container .clients {
   margin-top: 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 #client-list .container .clients .client {
@@ -537,7 +537,7 @@ body {
 #client-detail .container .client-photos {
   margin-top: 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 #client-detail .container .client-photos .photo {
