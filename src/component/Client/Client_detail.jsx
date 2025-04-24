@@ -6,6 +6,28 @@ import { useLocation } from 'react-router-dom';
 import axios from "axios";
 
 function Client_detail(props) {
+
+    const setLoaderOn = () => {
+        const content = document.querySelector(".client-photos");
+        document.body.style.overflow = "hidden";
+        content.style.opacity = "0";
+        setTimeout(() => {
+            const loader = document.getElementById("loader");
+            loader.style.display = "none";
+            content.style.opacity = "1";
+            content.classList.add("animate__animated", "animate__fadeIn");
+            document.body.style.overflow = "auto";
+          }, 1800);
+      }  
+  
+    const loaderEffect  = useRef(false); 
+        useEffect(() => {
+            if (!loaderEffect .current) {
+              setLoaderOn();
+              loaderEffect .current = true; 
+            }
+        }, []);      
+
     const location = useLocation();
     const [selectedClient, setCategory] = useState(null);
 
@@ -55,6 +77,7 @@ function Client_detail(props) {
         document.body.style.overflow = "hidden";
         modal.style.display = "block";
         modal_img.src ="https://empathie-rest-server.empathiephoto.site/uploads/" + e.target.alt;
+        modal_img.classList.add("animate__animated", "animate__fadeIn");
         if (e.target.naturalHeight > e.target.naturalWidth && window.innerWidth > 992) {
             modal_img.style.maxWidth = "500px";
         } else if(e.target.naturalHeight > e.target.naturalWidth ) {
@@ -77,8 +100,20 @@ function Client_detail(props) {
     
     return (
         <>
-            <section id="client-detail">
 
+            <section className="container" id="loader">
+                <div className="divLoader">
+                    <svg className="svgLoader" viewBox="0 0 100 100" width="10em" height="10em">
+                        <path stroke="none" d="M10 50A40 40 0 0 0 90 50A40 42 0 0 1 10 50" fill="#7E8075" transform="rotate(179.719 50 51)">
+                            <animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 51;360 50 51"
+                            keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite" ></animateTransform>
+                        </path>
+                    </svg>
+                </div>
+                <p><i>loading...</i></p>
+            </section>            
+
+            <section id="client-detail">
                 <div id="modal" className="modal">
                     <span id="close-modal" onClick={closeModal}>x</span>
                     <div className="modal-content">

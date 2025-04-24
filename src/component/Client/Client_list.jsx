@@ -5,6 +5,28 @@ import {NavLink } from "react-router-dom";
 import axios from "axios";
 
 function Client_list(props) {
+
+    const setLoaderOn = () => {
+        const content = document.querySelector(".clients");
+        document.body.style.overflow = "hidden";
+        content.style.opacity = "0";
+        setTimeout(() => {
+            const loader = document.getElementById("loader");
+            loader.style.display = "none";
+            content.style.opacity = "1";
+            content.classList.add("animate__animated", "animate__fadeIn");
+            document.body.style.overflow = "auto";
+          }, 800);
+      }  
+  
+    const loaderEffect  = useRef(false); 
+        useEffect(() => {
+            if (!loaderEffect .current) {
+              setLoaderOn();
+              loaderEffect .current = true; 
+            }
+        }, []);      
+
     const [result, setData] = useState(null);
     
     const getData  = () => {
@@ -38,6 +60,19 @@ function Client_list(props) {
 
     return (
         <>
+
+            <section className="container" id="loader">
+                <div className="divLoader">
+                    <svg className="svgLoader" viewBox="0 0 100 100" width="10em" height="10em">
+                        <path stroke="none" d="M10 50A40 40 0 0 0 90 50A40 42 0 0 1 10 50" fill="#7E8075" transform="rotate(179.719 50 51)">
+                            <animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 51;360 50 51"
+                            keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite" ></animateTransform>
+                        </path>
+                    </svg>
+                </div>
+                <p><i>loading...</i></p>
+            </section>        
+
             <section id="client-list">
                 <div className="container">
                     <NavLink to={{pathname: "/portfolio",}}>

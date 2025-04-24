@@ -104,6 +104,13 @@
 
                 img{
                     width: 400px;
+                    transition: transform 0.3s ease;
+                    transition: 0.3s;
+                    cursor: pointer;
+                    &:hover {
+                        transform: scale(1.05);
+                        opacity: 0.8;
+                    }
                 }
 
                 h3{

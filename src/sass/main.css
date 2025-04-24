@@ -147,6 +147,33 @@ body {
   }
 }
 
+:root {
+  --animate-delay: 0.5s;
+}
+
+#loader {
+  background-color: rgba(171, 171, 171, 0.349);
+  border-radius: 10px;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
+#loader .divLoader {
+  transform: scale(0.5);
+  margin-top: -30px;
+}
+#loader p {
+  color: whitesmoke;
+  margin-top: -30px;
+  font-size: 12px;
+}
+
 #hero-home #carousel {
   z-index: 1;
 }
@@ -396,6 +423,12 @@ body {
 }
 #client-list .container .clients .client img {
   width: 400px;
+  transition: transform 0.3s ease;
+  transition: 0.3s;
+}
+#client-list .container .clients .client img:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
 }
 #client-list .container .clients .client h3 {
   margin-top: 10px;
@@ -515,6 +548,13 @@ body {
 }
 #client-detail .container .client-photos .photo img {
   width: 400px;
+  transition: transform 0.3s ease;
+  transition: 0.3s;
+  cursor: pointer;
+}
+#client-detail .container .client-photos .photo img:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
 }
 #client-detail .container .client-photos .photo h3 {
   margin-top: 10px;
