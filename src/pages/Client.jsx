@@ -4,23 +4,21 @@ import { useLocation } from 'react-router-dom';
 import { useRef, useEffect, useState } from "react";
 
 function Client() {
-      const location = useLocation(); // 1.Mengambil informasi tentang URL saat ini (termasuk state) dari react-router-dom
+      const location = useLocation(); 
 
-      const [selectedCategory, setCategory] = useState(null); //2. Membuat state lokal untuk menyimpan kategori yang dipilih. Awalnya diset null. selectedCategory = nilai sekarang, setCategory = function untuk mengubah nilainya
+      const [selectedCategory, setCategory] = useState(null); 
 
-
-      //3. Function untuk mengambil kategori dari location.state 
       const getCategory = () => {
         const selectedCategory = location.state?.category; 
         return selectedCategory;
       };
   
-      // useRef jadi pengganti ComponentDidMount () dipakai sebagai "penanda" (flag) agar useEffect tidak dijalankan lebih dari satu kali, meskipun komponen re-render.
+      
       const effectRun = useRef(false); 
       useEffect(() => {
           if (!effectRun.current) {
-            const category = getCategory();  // 4. Panggil fungsi getCategory() untuk ambil nilai dari location
-            setCategory(category);  // 5. Ubah state selectedCategory menjadi nilai category yang tadi diambil dari location
+            const category = getCategory(); 
+            setCategory(category);  
           effectRun.current = true; 
           }
       }, []); 

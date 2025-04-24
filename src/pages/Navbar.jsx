@@ -6,7 +6,6 @@ const Navbar = () => {
 
 
   const hamburger = () => {
-    // Untuk membuka/menutup Sidebar menambah class Active
     const sidebar = document.querySelector(".sidebar");
     sidebar.classList.toggle("active");
     if (sidebar.classList.contains("active")) {
@@ -15,22 +14,12 @@ const Navbar = () => {
       document.body.style.overflow = "auto";
     }
 
-    // Untuk Transisi Burger Menu
   const span = document.querySelectorAll(".hamburger span");
   span[0].classList.toggle("show1");
   span[1].classList.toggle("show2");
   span[2].classList.toggle("show3");
 
   };
-
-  // PENGGANTI COMPONENTDIDMOUNT!!!
-  // const effectRun = useRef(false); // Ref untuk melacak apakah efek sudah berjalan
-  // useEffect(() => {
-  //   if (!effectRun.current) {
-  //     hamburger();
-  //     effectRun.current = true; // Set ke true setelah pertama kali dijalankan
-  //   }
-  // }, []); // Dependency array kosong agar hanya dijalankan sekali
 
   return (
     <>

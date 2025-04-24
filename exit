@@ -1,0 +1,27 @@
+* [33m306925c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mproduction[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m Fixing content alignment
+* [33mb1ad629[m Create penjagaan page
+* [33m789467f[m Implement loader & animation
+* [33m6a4dac9[m Fixing modal
+* [33m05f02ee[m Stitching Client Detail
+* [33ma1174bc[m Stitching Client List
+* [33m911d55a[m Preparation Stitching: Kirim State antar page
+* [33m2ec92a2[m Create Responsive in All pages
+* [33m1d6eb5d[m Change Assets
+* [33mf99c562[m Create FE Contact
+* [33m0e37ea3[m Create FE About Us
+* [33mc504fc8[m Create FE Client Detail
+* [33m49f6215[m Create FE Client - Desktop
+* [33m1d9789c[m Fixing Navbar Issue
+* [33m669be24[m Create FE Portfolio: Desktop
+* [33m0a0c4bf[m Fixing Responsive homepage
+* [33mf06cc8f[m Fixing hero
+* [33m04164cf[m Create & Styling Burger Menu
+* [33ma38f32c[m Responsive breakpoints & styling active page
+* [33me74f503[m Styling Navbar
+* [33mcfa68ab[m Create Navbar
+* [33maaef83e[m Create pages
+* [33mb21e021[m Routing page
+* [33m3e513c8[m Structuring component & pages
+* [33m7ac22dd[m Installing Sass & Cleaning base project
+* [33md276b7c[m Installing packages
+* [33m6c86290[m Initialize React
