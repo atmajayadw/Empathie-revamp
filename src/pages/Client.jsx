@@ -2,6 +2,7 @@ import Navbar from '../pages/Navbar.jsx'
 import Client_list from '../component/Client/Client_list.jsx'
 import { useLocation } from 'react-router-dom';
 import { useRef, useEffect, useState } from "react";
+import Footer from '../component/Footer.jsx';
 
 function Client() {
       const location = useLocation(); 
@@ -29,6 +30,7 @@ function Client() {
         <div>
             <Navbar/>
             <Client_list category={selectedCategory}/>
+            <Footer/>
         </div>
       </>
     )

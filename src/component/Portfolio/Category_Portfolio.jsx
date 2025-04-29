@@ -33,9 +33,6 @@ function Category_Portfolio() {
                                 </NavLink>
                             </div>
                         </div>
-
-                        <hr/>
-
                     </div>
                 </div>
             </section>

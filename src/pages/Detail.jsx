@@ -1,5 +1,6 @@
 import Navbar from '../pages/Navbar.jsx'
 import Client_detail from '../component/Client/Client_detail.jsx'
+import Footer from '../component/Footer.jsx';
 
 function Detail() {
   
@@ -9,6 +10,7 @@ function Detail() {
         <div>
             <Navbar/>
             <Client_detail/>
+            <Footer/>
         </div>
       </>
     )
