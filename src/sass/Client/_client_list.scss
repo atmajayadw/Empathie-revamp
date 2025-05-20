@@ -1,110 +1,109 @@
 @use "../setup";
 
-#client-list{
-    margin-top: 180px;
+#client-list {
+  margin-top: 180px;
 
-    .container{
-        a{
-            text-decoration: none;
-        }
-        
-        .button-back{
-            display: flex;
-            color: whitesmoke;
-            text-decoration: none;
-            transition: transform 0.3s ease;
-            
-            h5{
-                color: whitesmoke;
-                font-weight: 100;
-                font-size: 14px;
-                color: whitesmoke;
-            }
+  .container {
+    a {
+      text-decoration: none;
+    }
 
-            .arrow{
-                fill: whitesmoke;
-            }
+    .button-back {
+      display: flex;
+      color: whitesmoke;
+      text-decoration: none;
+      transition: transform 0.3s ease;
 
-            &:hover {
-                transform: translateX(-4px);
-            }
-        }
+      h5 {
+        color: whitesmoke;
+        font-weight: 100;
+        font-size: 14px;
+        color: whitesmoke;
+      }
 
-        .client-type {
-            font-family: "Noto Sans JP", sans-serif;
-            font-size: 36px;
-            font-weight: 100;
-            color: whitesmoke;
-            text-shadow: 2px 2px 8px rgba($color: #000000, $alpha: 0.3);
-            text-align: center;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-          
-        .client-type::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-            width: 100%;
-            height: 2px;
-            background-color: whitesmoke;
-            border-radius: 2px;
-        }
+      .arrow {
+        fill: whitesmoke;
+      }
 
-        .clients{
-            margin-top: 50px;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            .client{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-bottom: 40px;
+      &:hover {
+        transform: translateX(-4px);
+      }
+    }
 
-                img{
-                    width: 400px;
-                    transition: transform 0.3s ease;
-                    transition: 0.3s;
-                    &:hover {
-                        transform: scale(1.05);
-                        opacity: 0.8;
-                    }
-                }
+    .client-type {
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 36px;
+      font-weight: 100;
+      color: whitesmoke;
+      text-shadow: 2px 2px 8px rgba($color: #000000, $alpha: 0.3);
+      text-align: center;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
 
-                h3{
-                    margin-top: 10px;
-                    text-align: center;
-                    transition: 0.5s;
-                    font-weight: 100;
-                    color: whitesmoke;
-                    cursor: pointer;
-                    &:hover {
-                      color: #ababab;
-                    }
-                }
-            }
+    .client-type::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 100%;
+      height: 2px;
+      background-color: whitesmoke;
+      border-radius: 2px;
+    }
+
+    .clients {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      .client {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+
+        img {
+          width: 400px;
+          height: 267px;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+          transition: 0.3s;
+          border-radius: 5px;
+          &:hover {
+            transform: scale(1.05);
+            opacity: 0.8;
+          }
         }
 
-        @media (max-width: 992px) {
-            .clients{
-                justify-content: center;
-            }
+        h3 {
+          margin-top: 10px;
+          text-align: center;
+          transition: 0.5s;
+          font-weight: 100;
+          color: whitesmoke;
+          cursor: pointer;
+          &:hover {
+            color: #ababab;
+          }
         }
-        
+      }
     }
 
     @media (max-width: 992px) {
+      .clients {
+        justify-content: center;
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
     margin-top: 100px;
 
-        .container{
-            padding: 30px;
-        }
+    .container {
+      padding: 30px;
     }
-
-
-
+  }
 }

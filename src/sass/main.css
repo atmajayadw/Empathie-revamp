@@ -311,8 +311,9 @@ body {
 }
 #category-portfolio .row .categories {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 25px;
+  flex-wrap: wrap;
 }
 #category-portfolio .row .categories .category {
   display: flex;
@@ -322,12 +323,14 @@ body {
   height: 430px;
   margin-left: 10px;
   margin-right: 10px;
+  margin-bottom: 80px;
 }
 #category-portfolio .row .categories .category img {
   width: 340px;
   height: 340px;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 5px;
 }
 #category-portfolio .row .categories .category .btn-category {
   background-color: #2f2f2f;
@@ -366,7 +369,7 @@ body {
     justify-content: center;
   }
   #category-portfolio .row .categories .category {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
   }
 }
 
@@ -430,8 +433,12 @@ body {
 }
 #client-list .container .clients .client img {
   width: 400px;
+  height: 267px;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: transform 0.3s ease;
   transition: 0.3s;
+  border-radius: 5px;
 }
 #client-list .container .clients .client img:hover {
   transform: scale(1.05);
