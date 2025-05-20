@@ -1,9 +1,34 @@
+import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
+import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Thumbail1, Thumbail2, Thumbail3 } from "../../assets/img/img";
 
 function Category_Portfolio() {
+  const [result, setData] = useState(null);
+
+  const getData = () => {
+    const URL = `http://127.0.0.1:8000/api/category`;
+    axios
+      .get(URL)
+      .then((res) => {
+        setData(res.data);
+        console.log(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Data Not Found!");
+      });
+  };
+
+  const effectRun = useRef(false);
+  useEffect(() => {
+    if (!effectRun.current) {
+      getData();
+      effectRun.current = true;
+    }
+  }, []);
+
   return (
     <>
       <section id="category-portfolio">
@@ -12,41 +37,22 @@ function Category_Portfolio() {
             <h1>PORTFOLIO</h1>
 
             <div className="categories">
-              <div className="category">
-                <img src={Thumbail1} alt="engagement" />
-                <NavLink
-                  className="btn btn-category"
-                  rel="noopenner noreferrer"
-                  to={{ pathname: "/portfolio/client" }}
-                  state={{ category: "Engagement" }}
-                >
-                  <span>Engagement</span>
-                </NavLink>
-              </div>
-
-              <div className="category">
-                <img src={Thumbail2} alt="pre-wedding" />
-                <NavLink
-                  className="btn btn-category"
-                  rel="noopenner noreferrer"
-                  to={{ pathname: "/portfolio/client" }}
-                  state={{ category: "Pre-Wedding" }}
-                >
-                  <span>PreWedding</span>
-                </NavLink>
-              </div>
-
-              <div className="category">
-                <img src={Thumbail3} alt="wedding" />
-                <NavLink
-                  className="btn btn-category"
-                  rel="noopenner noreferrer"
-                  to={{ pathname: "/portfolio/client" }}
-                  state={{ category: "Wedding" }}
-                >
-                  <span>Wedding</span>
-                </NavLink>
-              </div>
+              {result?.data?.map((item) => (
+                <div className="category" key={item.id}>
+                  <img
+                    src={"http://127.0.0.1:8000/storage/" + item.thumbnail}
+                    alt="{item.category_name}"
+                  />
+                  <NavLink
+                    className="btn btn-category"
+                    rel="noopenner noreferrer"
+                    to={{ pathname: "/portfolio/client" }}
+                    state={{ category: item.category_name }}
+                  >
+                    <span>{item.category_name}</span>
+                  </NavLink>
+                </div>
+              ))}
             </div>
           </div>
         </div>
