@@ -39,10 +39,12 @@ function Client_list(props) {
   };
 
   const [result, setData] = useState(null);
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const APP_BASE_URL = import.meta.env.VITE_APP_BASE_URL;
 
   const getData = () => {
     const selectedCategory = props.category;
-    const URL = `http://127.0.0.1:8000/api/clients/${selectedCategory}`;
+    const URL = `${API_BASE_URL}/clients/${selectedCategory}`;
     axios
       .get(URL)
       .then((res) => {
@@ -141,10 +143,7 @@ function Client_list(props) {
                   category: props.category,
                 }}
               >
-                <img
-                  src={"http://127.0.0.1:8000/storage/" + item.thumbnail}
-                  alt=""
-                />
+                <img src={`${APP_BASE_URL}/storage/` + item.thumbnail} alt="" />
                 <h3>{item.name}</h3>
               </NavLink>
             ))}

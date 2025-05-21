@@ -63,7 +63,7 @@ function Client_detail(props) {
   useEffect(() => {
     if (!detailLoaded.current && selectedClient) {
       getDetail();
-      console.log(selectedClient);
+      // console.log(selectedClient);
       detailLoaded.current = true;
     } else {
       checkPage();
@@ -71,13 +71,16 @@ function Client_detail(props) {
   }, [selectedClient]);
 
   const [result, setData] = useState(null);
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const APP_BASE_URL = import.meta.env.VITE_APP_BASE_URL;
+
   const getDetail = () => {
-    const URL =
-      "https://empathie-rest-server.empathiephoto.site/api/portfolio/";
+    const URL = `${API_BASE_URL}/clients/detail/${selectedClient.client_id}`;
     axios
-      .get(URL, { params: { client_id: selectedClient.client_id } })
+      .get(URL)
       .then((res) => {
         setData(res.data);
+        console.log(res.data);
       })
       .catch((error) => {
         console.log(error);
@@ -91,8 +94,7 @@ function Client_detail(props) {
 
     document.body.style.overflow = "hidden";
     modal.style.display = "block";
-    modal_img.src =
-      "https://empathie-rest-server.empathiephoto.site/uploads/" + e.target.alt;
+    modal_img.src = "http://127.0.0.1:8000/storage/" + e.target.alt;
     modal_img.classList.add("animate__animated", "animate__fadeIn");
     if (
       e.target.naturalHeight > e.target.naturalWidth &&
@@ -188,14 +190,11 @@ function Client_detail(props) {
           </h1>
 
           <div className="client-photos">
-            {result?.data?.map((item) => (
-              <div className="photo" key={item.id} onClick={showModal}>
+            {result?.data?.[0]?.photo?.map((photo, index) => (
+              <div className="photo" key={index} onClick={showModal}>
                 <img
-                  src={
-                    "https://empathie-rest-server.empathiephoto.site/uploads/" +
-                    item.photo
-                  }
-                  alt={item.photo}
+                  src={`${APP_BASE_URL}/storage/${photo}`}
+                  alt={`${photo}`}
                 />
               </div>
             ))}

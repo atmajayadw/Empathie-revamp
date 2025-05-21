@@ -5,10 +5,13 @@ import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function Category_Portfolio() {
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const APP_BASE_URL = import.meta.env.VITE_APP_BASE_URL;
+
   const [result, setData] = useState(null);
 
   const getData = () => {
-    const URL = `http://127.0.0.1:8000/api/category`;
+    const URL = `${API_BASE_URL}/category`;
     axios
       .get(URL)
       .then((res) => {
@@ -40,7 +43,7 @@ function Category_Portfolio() {
               {result?.data?.map((item) => (
                 <div className="category" key={item.id}>
                   <img
-                    src={"http://127.0.0.1:8000/storage/" + item.thumbnail}
+                    src={`${APP_BASE_URL}/storage/` + item.thumbnail}
                     alt="{item.category_name}"
                   />
                   <NavLink
