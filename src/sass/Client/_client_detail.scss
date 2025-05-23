@@ -1,142 +1,166 @@
 @use "../setup";
 
-#client-detail{
-    margin-top: 180px;
+#client-detail {
+  margin-top: 180px;
 
-    #modal {
-        display: none;
-        position: fixed;
-        z-index: 99;
-        padding-top: 100px;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-      
-        #close-modal {
-          position: absolute;
-          top: 15px;
-          right: 35px;
-          color: #f1f1f1;
-          font-size: 24px;
-          font-weight: bold;
-          -webkit-transition: 0.3s;
-          transition: 0.3s;
+  #modal {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    #close-modal {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 24px;
+      font-weight: bold;
+      -webkit-transition: 0.3s;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      .img {
+        width: 60%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .container {
+    a {
+      text-decoration: none;
+    }
+
+    .button-back {
+      display: flex;
+      color: whitesmoke;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+
+      h5 {
+        color: whitesmoke;
+        font-weight: 100;
+        font-size: 14px;
+        color: whitesmoke;
+      }
+
+      .arrow {
+        fill: whitesmoke;
+      }
+
+      &:hover {
+        transform: translateX(-4px);
+      }
+    }
+
+    .client-name {
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 36px;
+      font-weight: 100;
+      color: whitesmoke;
+      text-shadow: 2px 2px 8px rgba($color: #000000, $alpha: 0.3);
+      text-align: center;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .client-name::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 100%;
+      height: 2px;
+      background-color: whitesmoke;
+      border-radius: 2px;
+    }
+
+    // .client-photos {
+    //   margin-top: 50px;
+    //   display: flex;
+    //   justify-content: space-around;
+    //   flex-wrap: wrap;
+    //   column-count: 3;
+    //   column-gap: 10px;
+    //   .photo {
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: center;
+    //     margin-bottom: 40px;
+
+    //     img {
+    //       width: 400px;
+    //       transition: transform 0.3s ease;
+    //       transition: 0.3s;
+    //       break-inside: avoid;
+    //       border-radius: 8px;
+    //       cursor: pointer;
+    //       &:hover {
+    //         transform: scale(1.05);
+    //         opacity: 0.8;
+    //       }
+    //     }
+    //   }
+    // }
+
+    .client-photos {
+      margin-top: 50px;
+      column-count: 3;
+      column-gap: 20px;
+
+      .photo {
+        break-inside: avoid;
+        margin-bottom: 20px;
+
+        img {
+          width: 100%;
+          display: block;
+          transition: transform 0.3s ease;
+          border-radius: 8px;
           cursor: pointer;
-        }
-      
-        /* Modal Content (image) */
-        .modal-content {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: transparent;
-          .img{
-            width: 60%;
-            object-fit: cover;
+
+          &:hover {
+            transform: scale(1.05);
+            opacity: 0.8;
           }
-
         }
+      }
     }
+  }
 
-    .container{
-        a{
-            text-decoration: none;
-        }
-        
-        .button-back{
-            display: flex;
-            color: whitesmoke;
-            text-decoration: none;
-            transition: transform 0.3s ease;
-            
-            h5{
-                color: whitesmoke;
-                font-weight: 100;
-                font-size: 14px;
-                color: whitesmoke;
-            }
+  @media (min-width: 576px) and (max-width: 992px) {
+    margin-top: 100px;
 
-            .arrow{
-                fill: whitesmoke;
-            }
+    .container {
+      padding: 30px;
 
-            &:hover {
-                transform: translateX(-4px);
-            }
-        }
-
-        .client-name {
-            font-family: "Noto Sans JP", sans-serif;
-            font-size: 36px;
-            font-weight: 100;
-            color: whitesmoke;
-            text-shadow: 2px 2px 8px rgba($color: #000000, $alpha: 0.3);
-            text-align: center;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-          
-        .client-name::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-            width: 100%;
-            height: 2px;
-            background-color: whitesmoke;
-            border-radius: 2px;
-        }
-
-        .client-photos{
-            margin-top: 50px;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            .photo{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-bottom: 40px;
-
-                img{
-                    width: 400px;
-                    transition: transform 0.3s ease;
-                    transition: 0.3s;
-                    cursor: pointer;
-                    &:hover {
-                        transform: scale(1.05);
-                        opacity: 0.8;
-                    }
-                }
-
-                h3{
-                    margin-top: 10px;
-                    text-align: center;
-                    transition: 0.5s;
-                    font-weight: 100;
-                    color: whitesmoke;
-                    cursor: pointer;
-                    &:hover {
-                      color: #ababab;
-                    }
-                }
-            }
-        }
+      .client-photos {
+        justify-content: center;
+        column-count: 2;
+      }
     }
+  }
 
-    @media (max-width: 992px) {
-        margin-top: 100px;
-    
-            .container{
-                padding: 30px;
-
-                .client-photos{
-                    justify-content: center;
-                }
-            }
+  @media (max-width: 575.98px) {
+    .container {
+      .client-photos {
+        column-count: 1;
+      }
     }
+  }
 }

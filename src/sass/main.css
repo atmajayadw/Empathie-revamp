@@ -336,7 +336,6 @@ body {
   background-color: #2f2f2f;
   color: white;
   width: 270px;
-  height: 52px;
   border: 1px solid white;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 20px;
@@ -550,38 +549,28 @@ body {
 }
 #client-detail .container .client-photos {
   margin-top: 50px;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  -moz-column-count: 3;
+       column-count: 3;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
 }
 #client-detail .container .client-photos .photo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 40px;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
+  margin-bottom: 20px;
 }
 #client-detail .container .client-photos .photo img {
-  width: 400px;
+  width: 100%;
+  display: block;
   transition: transform 0.3s ease;
-  transition: 0.3s;
+  border-radius: 8px;
   cursor: pointer;
 }
 #client-detail .container .client-photos .photo img:hover {
   transform: scale(1.05);
   opacity: 0.8;
 }
-#client-detail .container .client-photos .photo h3 {
-  margin-top: 10px;
-  text-align: center;
-  transition: 0.5s;
-  font-weight: 100;
-  color: whitesmoke;
-  cursor: pointer;
-}
-#client-detail .container .client-photos .photo h3:hover {
-  color: #ababab;
-}
-@media (max-width: 992px) {
+@media (min-width: 576px) and (max-width: 992px) {
   #client-detail {
     margin-top: 100px;
   }
@@ -590,6 +579,14 @@ body {
   }
   #client-detail .container .client-photos {
     justify-content: center;
+    -moz-column-count: 2;
+         column-count: 2;
+  }
+}
+@media (max-width: 575.98px) {
+  #client-detail .container .client-photos {
+    -moz-column-count: 1;
+         column-count: 1;
   }
 }
 
