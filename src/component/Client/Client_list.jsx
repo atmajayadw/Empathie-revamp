@@ -7,8 +7,14 @@ import { NavLink, useNavigate } from "react-router-dom";
 function Client_list(props) {
   const navigate = useNavigate();
 
+  const hideFooter = () => {
+    const footer = document.getElementById("footer");
+    footer.style.opacity = "0";
+  };
+
   const setLoaderOn = () => {
     const content = document.querySelector(".clients");
+    const footer = document.getElementById("footer");
     document.body.style.overflow = "hidden";
     content.style.opacity = "0";
     setTimeout(() => {
@@ -17,12 +23,14 @@ function Client_list(props) {
       content.style.opacity = "1";
       content.classList.add("animate__animated", "animate__fadeIn");
       document.body.style.overflow = "auto";
+      footer.style.opacity = "1";
     }, 800);
   };
 
   const loaderEffect = useRef(false);
   useEffect(() => {
     if (!loaderEffect.current) {
+      hideFooter();
       setLoaderOn();
       loaderEffect.current = true;
     }
