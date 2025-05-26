@@ -88,7 +88,7 @@ function Client_detail(props) {
       .get(URL)
       .then((res) => {
         setData(res.data);
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch((error) => {
         console.log(error);

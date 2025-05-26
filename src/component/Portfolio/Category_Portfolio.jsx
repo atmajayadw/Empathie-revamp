@@ -16,7 +16,7 @@ function Category_Portfolio() {
       .get(URL)
       .then((res) => {
         setData(res.data);
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch((error) => {
         console.log(error);
