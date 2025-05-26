@@ -94,7 +94,7 @@ function Client_detail(props) {
 
     document.body.style.overflow = "hidden";
     modal.style.display = "block";
-    modal_img.src = "http://127.0.0.1:8000/storage/" + e.target.alt;
+    modal_img.src = `${APP_BASE_URL}/storage/` + e.target.alt;
     modal_img.classList.add("animate__animated", "animate__fadeIn");
     if (
       e.target.naturalHeight > e.target.naturalWidth &&
